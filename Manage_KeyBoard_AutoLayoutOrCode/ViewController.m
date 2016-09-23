@@ -75,12 +75,12 @@
     NSNumber *duration = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
     
-    [self updateViewConstraintsForKeyboardHeight:0];
+    
     
     [UIView animateWithDuration:[duration floatValue] animations:^{
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationCurve:[curve intValue]];
-        [self.view layoutIfNeeded];
+        [self updateViewConstraintsForKeyboardHeight:0];
         
     }];
 
